@@ -27,7 +27,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\ASUS\\source\\repos\\CarBook\\Core\\CarBook.Domain\\CarBook.Domain.csproj": {
+                "projectPath": "C:\\Users\\ASUS\\source\\repos\\CarBook\\Core\\CarBook.Domain\\CarBook.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

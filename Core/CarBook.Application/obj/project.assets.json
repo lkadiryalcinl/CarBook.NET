@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {}
+    "net7.0": {
+      "CarBook.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/CarBook.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarBook.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CarBook.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CarBook.Domain/CarBook.Domain.csproj",
+      "msbuildProject": "../CarBook.Domain/CarBook.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net7.0": []
+    "net7.0": [
+      "CarBook.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ASUS\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ASUS\\source\\repos\\CarBook\\Core\\CarBook.Domain\\CarBook.Domain.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\source\\repos\\CarBook\\Core\\CarBook.Domain\\CarBook.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
