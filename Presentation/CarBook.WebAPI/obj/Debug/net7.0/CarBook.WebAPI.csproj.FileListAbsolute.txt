@@ -78,3 +78,5 @@ C:\Users\ASUS\source\repos\CarBook\Presentation\CarBook.WebAPI\obj\Debug\net7.0\
 C:\Users\ASUS\source\repos\CarBook\Presentation\CarBook.WebAPI\obj\Debug\net7.0\CarBook.WebAPI.pdb
 C:\Users\ASUS\source\repos\CarBook\Presentation\CarBook.WebAPI\obj\Debug\net7.0\CarBook.WebAPI.genruntimeconfig.cache
 C:\Users\ASUS\source\repos\CarBook\Presentation\CarBook.WebAPI\obj\Debug\net7.0\ref\CarBook.WebAPI.dll
+C:\Users\ASUS\source\repos\CarBook\Presentation\CarBook.WebAPI\bin\Debug\net7.0\CarBook.Application.dll
+C:\Users\ASUS\source\repos\CarBook\Presentation\CarBook.WebAPI\bin\Debug\net7.0\CarBook.Application.pdb

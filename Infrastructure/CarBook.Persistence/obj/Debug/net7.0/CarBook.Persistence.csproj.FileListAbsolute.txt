@@ -15,3 +15,5 @@ C:\Users\ASUS\source\repos\CarBook\Infrastructure\CarBook.Persistence\obj\Debug\
 C:\Users\ASUS\source\repos\CarBook\Infrastructure\CarBook.Persistence\obj\Debug\net7.0\CarBook.Persistence.pdb
 C:\Users\ASUS\source\repos\CarBook\Infrastructure\CarBook.Persistence\obj\Debug\net7.0\CarBook.Persistence.genruntimeconfig.cache
 C:\Users\ASUS\source\repos\CarBook\Infrastructure\CarBook.Persistence\obj\Debug\net7.0\ref\CarBook.Persistence.dll
+C:\Users\ASUS\source\repos\CarBook\Infrastructure\CarBook.Persistence\bin\Debug\net7.0\CarBook.Application.dll
+C:\Users\ASUS\source\repos\CarBook\Infrastructure\CarBook.Persistence\bin\Debug\net7.0\CarBook.Application.pdb
