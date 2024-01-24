@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\CarBook.WebAPI.props" />
+</Project>
