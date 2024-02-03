@@ -1,5 +1,6 @@
 ﻿using CarBook.Application.Features.Mediator.Commands.CarCommand;
 using CarBook.Application.Features.Mediator.Queries.CarQueries;
+using CarBook.Application.Features.Mediator.Results.CarResults;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,6 +21,13 @@ namespace CarBook.WebAPI.Controllers
         public async Task<IActionResult> CarList()
         {
             var values = await _mediator.Send(new GetCarQuery());
+            return Ok(values);
+        }
+        
+        [HttpGet("GetCarsListWithBrand")]
+        public async Task<IActionResult> GetCarsListWithBrand()
+        {
+            var values = await _mediator.Send(new GetCarWithBrandQuery());
             return Ok(values);
         }
 
