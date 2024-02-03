@@ -1,26 +1,33 @@
-using CarBook.Application.Features.CQRS.Handlers.AboutHandlers;
-using CarBook.Application.Interfaces;
-using CarBook.Persistence.Context;
-using CarBook.Persistence.Repositories;
+using Autofac.Extensions.DependencyInjection;
+using Autofac;
+using CarBook.Persistence.IoC.DependencyInjection;
+using CarBook.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddScoped<CarBookContext>();
-builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
-
-builder.Services.AddScoped<GetAboutQueryHandler>();
-builder.Services.AddScoped<GetAboutByIdQueryHandler>();
-builder.Services.AddScoped<CreateAboutCommandHandler>();
-builder.Services.AddScoped<UpdateAboutCommandHandler>();
-builder.Services.AddScoped<RemoveAboutCommandHandler>();
-
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("CarBookCors", opts =>
+    {
+        opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+
+builder.Services.AddApplicationService(builder.Configuration);
+// Configure Autofac container
+builder.Host.ConfigureContainer<ContainerBuilder>(
+    builder =>
+    {
+        builder.RegisterModule(new AutofacApplicationModule());
+        builder.RegisterModule(new AutofacPersistanceModule());
+    });
 
 var app = builder.Build();
 
@@ -30,6 +37,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("CarBookCors");
 
 app.UseHttpsRedirection();
 

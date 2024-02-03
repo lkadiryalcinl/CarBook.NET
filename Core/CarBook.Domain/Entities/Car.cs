@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CarBook.Domain.Entities
+﻿namespace CarBook.Domain.Entities
 {
     public class Car : IEntity
     {
+        public int ID { get; set; }
         public int BrandID { get; set; }
         public Brand Brand { get; set; }
         public string Model { get; set; }

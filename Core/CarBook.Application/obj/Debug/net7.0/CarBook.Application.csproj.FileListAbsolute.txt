@@ -8,6 +8,7 @@ C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Application\obj\Debug\net7.0\Car
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Application\obj\Debug\net7.0\CarBook.Application.AssemblyInfoInputs.cache
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Application\obj\Debug\net7.0\CarBook.Application.AssemblyInfo.cs
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Application\obj\Debug\net7.0\CarBook.Application.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Application\obj\Debug\net7.0\CarBook.Application.sourcelink.json
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Application\obj\Debug\net7.0\CarBook.Application.csproj.CopyComplete
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Application\obj\Debug\net7.0\CarBook.Application.dll
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Application\obj\Debug\net7.0\refint\CarBook.Application.dll

@@ -5,6 +5,7 @@ C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.AssemblyInfoInputs.cache
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.AssemblyInfo.cs
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.sourcelink.json
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.dll
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Domain\obj\Debug\net7.0\refint\CarBook.Domain.dll
 C:\Users\ASUS\source\repos\CarBook\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.pdb

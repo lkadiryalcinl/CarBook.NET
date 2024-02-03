@@ -1,10 +1,5 @@
 ﻿using CarBook.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarBook.Persistence.Context
 {
@@ -13,7 +8,7 @@ namespace CarBook.Persistence.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseSqlServer("Server=KADIRYALCIN\\SQLEXPRESS;" +
+            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;" +
                 "initial Catalog=CarBookDb;" +
                 "integrated Security=true;" +
                 "TrustServerCertificate=true");
