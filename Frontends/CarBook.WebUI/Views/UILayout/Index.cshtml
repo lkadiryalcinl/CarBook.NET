@@ -1,17 +1,16 @@
 ﻿@{
     Layout = null;
+    string currentUrl = Context.Request.Path;
 }
 
 <!DOCTYPE html>
 <html lang="en">
 
-    @await Component.InvokeAsync("_HeadUILayoutComponentPartial")
+@await Component.InvokeAsync("_HeadUILayoutComponentPartial")
 
 <body>
 
     @await Component.InvokeAsync("_NavbarUILayoutComponentPartial")
-
-    @await Component.InvokeAsync("_MainCoverUILayoutComponentPartial")
 
     @RenderBody()
 
