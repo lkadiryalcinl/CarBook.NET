@@ -1,0 +1,12 @@
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\bin\Debug\net7.0\CarBook.Dto.deps.json
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\bin\Debug\net7.0\CarBook.Dto.dll
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\bin\Debug\net7.0\CarBook.Dto.pdb
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\obj\Debug\net7.0\CarBook.Dto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\obj\Debug\net7.0\CarBook.Dto.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\obj\Debug\net7.0\CarBook.Dto.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\obj\Debug\net7.0\CarBook.Dto.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\obj\Debug\net7.0\CarBook.Dto.sourcelink.json
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\obj\Debug\net7.0\CarBook.Dto.dll
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\obj\Debug\net7.0\refint\CarBook.Dto.dll
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\obj\Debug\net7.0\CarBook.Dto.pdb
+C:\Users\ASUS\source\repos\CarBook\Frontends\CarBook.Dto\obj\Debug\net7.0\ref\CarBook.Dto.dll
