@@ -6,9 +6,9 @@ namespace CarBook.WebUI.ViewComponents.FooterAddressComponents
 {
     public class _FooterAddressComponentPartial : ViewComponent
     {
-        private readonly HttpClientService _httpClientService;
+        private readonly HttpClientServiceViewComponent _httpClientService;
 
-        public _FooterAddressComponentPartial(HttpClientService httpClientService)
+        public _FooterAddressComponentPartial(HttpClientServiceViewComponent httpClientService)
         {
             _httpClientService = httpClientService;
         }

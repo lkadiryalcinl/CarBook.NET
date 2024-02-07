@@ -6,9 +6,9 @@ namespace CarBook.WebUI.ViewComponents.AboutViewComponents
 {
     public class _TestimonialComponentPartial : ViewComponent
     {
-        private readonly HttpClientService _httpClientService;
+        private readonly HttpClientServiceViewComponent _httpClientService;
 
-        public _TestimonialComponentPartial(HttpClientService httpClientService)
+        public _TestimonialComponentPartial(HttpClientServiceViewComponent httpClientService)
         {
             _httpClientService = httpClientService;
         }
