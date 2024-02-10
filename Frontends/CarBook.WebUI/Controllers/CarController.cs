@@ -1,4 +1,4 @@
-﻿using CarBook.Dto.CarDtos;
+﻿using CarBook.Dto.CarPricingDtos;
 using CarBook.WebUI.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +15,9 @@ namespace CarBook.WebUI.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var values = await _httpClientService.InvokeAsync<List<ResultCarWithBrandsDto>>("Cars/GetCarsListWithBrand");
+            ViewBag.v1 ="Arabalar";
+            ViewBag.v2 ="Arabalarımız";
+            var values = await _httpClientService.InvokeAsync<List<ResultCarPricingWithCarDailyDto>>("CarPricings/GetCarPricingWithCarDaily");
 
             if(values.Count > 0)
             {

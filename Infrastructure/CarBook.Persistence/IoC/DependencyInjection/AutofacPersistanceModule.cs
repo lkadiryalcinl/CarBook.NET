@@ -4,6 +4,12 @@ using CarBook.Application.Interfaces;
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories.CarRepositories;
 using CarBook.Persistence.Repositories;
+using CarBook.Application.Interfaces.BlogInterfaces;
+using BlogBook.Persistence.Repositories.BlogRepositories;
+using CarBook.Persistence.Repositories.CarPricingRepositories;
+using CarBook.Application.Interfaces.CarPricingInterfaces;
+using CarBook.Persistence.Repositories.TagCloudRepositories;
+using CarBook.Application.Interfaces.TagCloudInterfaces;
 
 namespace CarBook.Persistence.IoC.DependencyInjection
 {
@@ -15,6 +21,10 @@ namespace CarBook.Persistence.IoC.DependencyInjection
 
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             builder.RegisterType<CarRepository>().As<ICarRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<CarPricingRepository>().As<ICarPricingRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<BlogRepository>().As<IBlogRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<TagCloudRepository>().As<ITagCloudRepository>().InstancePerLifetimeScope();
+
         }
     }
 }
