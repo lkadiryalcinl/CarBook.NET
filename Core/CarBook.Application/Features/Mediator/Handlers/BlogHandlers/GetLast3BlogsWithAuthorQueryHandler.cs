@@ -20,12 +20,9 @@ namespace CarBook.Application.Features.Mediator.Handlers.BlogHandlers
             var values = await _repository.GetLast3BlogsWithAuthor();
             return values.Select(x => new GetLast3BlogsWithAuthorQueryResult
             {
-                AuthorId = x.AuthorId,
-                CategoryId = x.CategoryId,
                 CoverImageUrl = x.CoverImageUrl,
                 CreatedDate = x.CreatedDate,
                 Title = x.Title,
-                ID = x.ID,
                 AuthorName = x.Author.Name
             }).ToList();
         }

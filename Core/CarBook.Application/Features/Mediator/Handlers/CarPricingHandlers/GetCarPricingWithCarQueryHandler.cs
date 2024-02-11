@@ -19,7 +19,6 @@ namespace CarBook.Application.Features.Mediator.Handlers.CarHandlers
             var values = await _repository.GetCarsWithPricings();
             return values.Select(x => new GetCarPricingWithCarQueryResult
             {
-                ID = x.ID,
                 Model = x.Car.Model,
                 CoverImageUrl = x.Car.CoverImageUrl,
                 BrandName = x.Car.Brand.Name,

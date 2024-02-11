@@ -2,7 +2,6 @@
 {
     public class GetCarPricingWithCarDailyQueryResult
     {
-        public int ID { get; set; }
         public string BrandName { get; set; }
         public string Model { get; set; }
         public string CoverImageUrl { get; set; }

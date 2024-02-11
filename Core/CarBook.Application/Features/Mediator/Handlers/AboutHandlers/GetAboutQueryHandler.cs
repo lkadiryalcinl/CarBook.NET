@@ -22,7 +22,6 @@ namespace CarBook.Application.Features.Mediator.Handlers.AboutHandlers
             return values.Select(x => new GetAboutQueryResult
             {
                 Title = x.Title,
-                ID = x.ID,
                 Description = x.Description,
                 ImageUrl = x.ImageUrl,
             }).ToList();

@@ -20,9 +20,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.TagCloudHandlers
             var values = await _tagCloudRepository.GetTagCloudsByBlogId(request.Id);
             return values.Select(x => new GetTagCloudByBlogIdQueryResult
             {
-                BlogId = x.BlogId,
                 Title = x.Title,
-                ID = x.ID,
             }).ToList();
         }
     }

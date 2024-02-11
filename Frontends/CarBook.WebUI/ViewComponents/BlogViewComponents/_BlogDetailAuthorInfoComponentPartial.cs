@@ -1,12 +1,22 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CarBook.Dto.BlogDtos;
+using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CarBook.WebUI.ViewComponents.BlogViewComponents
 {
     public class _BlogDetailAuthorInfoComponentPartial : ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync()
+        private readonly HttpClientServiceViewComponent _component;
+
+        public _BlogDetailAuthorInfoComponentPartial(HttpClientServiceViewComponent component)
         {
-            return View();
+            _component = component;
+        }
+
+        public async Task<IViewComponentResult> InvokeAsync(int id)
+        {
+            var dummy = await _component.InvokeAsync<GetBlogByAuthorIdDto>($"Blogs/GetBlogByAuthorId/{id}");
+            return dummy;
         }
     }
 }

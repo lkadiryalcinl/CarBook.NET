@@ -20,6 +20,12 @@ namespace BlogBook.Persistence.Repositories.BlogRepositories
             return values;
         }
 
+        public async Task<Blog> GetBlogByAuthorId(int id)
+        {
+            var values = await _context.Blogs.Include(x => x.Author).Where(y => y.ID == id).FirstOrDefaultAsync();
+            return values;
+        }
+
         public async Task<List<Blog>> GetLast3BlogsWithAuthor()
         {
             var values = await _context.Blogs.Include(x => x.Author).OrderByDescending(x => x.ID).Take(3).ToListAsync();
