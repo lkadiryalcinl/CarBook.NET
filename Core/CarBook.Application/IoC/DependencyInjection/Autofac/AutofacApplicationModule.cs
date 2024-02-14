@@ -1,6 +1,4 @@
 ﻿using Autofac;
-using Autofac.Features.Variance;
-using MediatR;
 
 namespace CarBook.Persistence.IoC.DependencyInjection
 {

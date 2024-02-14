@@ -17,8 +17,10 @@ namespace CarBook.Persistence.IoC.DependencyInjection
     {
         protected override void Load(ContainerBuilder builder)
         {
+            // Main Context Registiration
             builder.RegisterType<CarBookContext>().AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
 
+            //Mediator Registirations
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             builder.RegisterType<CarRepository>().As<ICarRepository>().InstancePerLifetimeScope();
             builder.RegisterType<CarPricingRepository>().As<ICarPricingRepository>().InstancePerLifetimeScope();

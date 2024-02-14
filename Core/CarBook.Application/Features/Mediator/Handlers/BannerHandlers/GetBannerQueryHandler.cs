@@ -22,10 +22,10 @@ namespace CarBook.Application.Features.Mediator.Handlers.BannerHandlers
             return values.Select(x => new GetBannerQueryResult
             {
                 Description = x.Description,
-                ID = x.ID,
                 Title = x.Title,
                 VideoDescription = x.VideoDescription,
-                VideoUrl = x.VideoUrl
+                VideoUrl = x.VideoUrl,
+                ImageUrl = x.ImageUrl
             }).ToList();
         }
     }

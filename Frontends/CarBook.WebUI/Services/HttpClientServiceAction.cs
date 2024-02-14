@@ -38,5 +38,22 @@ namespace CarBook.WebUI.Services
 
             return responseMessage.IsSuccessStatusCode;
         }
+
+        public async Task<bool> RemoveAsync(string path)
+        {
+            var responseMessage = await _httpClient.DeleteAsync(path);
+
+            return responseMessage.IsSuccessStatusCode;
+        }
+
+        public async Task<bool> UpdateAsync<TDto>(string path, TDto updateDto)
+        {
+            var jsonData = JsonConvert.SerializeObject(updateDto);
+            StringContent content = new(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await _httpClient.PutAsync(path, content);
+             
+            return responseMessage.IsSuccessStatusCode;
+        }
+
     }
 }
