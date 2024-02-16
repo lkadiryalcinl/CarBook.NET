@@ -20,6 +20,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.CategoryHandlers
             var values = await _repository.GetAllAsync();
             return values.Select(x => new GetCategoryQueryResult
             {
+                ID = x.ID,
                 Name = x.Name
             }).ToList();
         }

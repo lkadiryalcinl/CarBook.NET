@@ -20,6 +20,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.BannerHandlers
             var value = await _repository.GetByIdAsync(request.Id);
             return new GetBannerByIdQueryResult
             {
+                ID = value.ID,
                 Description = value.Description,
                 Title = value.Title,
                 VideoDescription = value.VideoDescription,

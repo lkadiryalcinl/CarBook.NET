@@ -37,7 +37,7 @@ namespace CarBook.WebAPI.Controllers
             return Ok("Yazar bilgisi eklendi.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveAuthor(int id)
         {
             await _mediator.Send(new RemoveAuthorCommand(id));

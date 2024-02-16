@@ -1,0 +1,50 @@
+﻿@model UpdateBannerDto
+@{
+    ViewData["Title"] = "UpdateFeature";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Banner Güncelleme</h4>
+                        <p class="card-subtitle mb-4">
+                            Banner ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir. Veri girişlerinden sonra kaydet
+                            butonuna tıklayarak işlemi tamamlayabilirsiniz.
+                        </p>
+                        <form method="post">
+                            <input type="hidden" asp-for="ID" />
+                            <div class="form-group">
+                                <label for="exampleInputTitle">Banner Başlığı</label>
+                                <input type="text" class="form-control" id="exampleInputTitle" asp-for="Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputDesc">Banner Açıklaması</label>
+                                <textarea class="form-control" id="exampleInputDesc" asp-for="Description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputVideoLink">Banner Video Linki</label>
+                                <input type="text" class="form-control" id="exampleInputVideoLink" asp-for="VideoUrl">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputVideoDesc">Banner Video Açıklaması</label>
+                                <input type="text" class="form-control" id="exampleInputVideoDesc" asp-for="VideoDescription">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputImageLink">Banner Fotoğraf Linki</label>
+                                <input type="text" class="form-control" id="exampleInputImageLink" asp-for="ImageUrl">
+                            </div>
+
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Banner'ı Kaydet</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

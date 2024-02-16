@@ -29,6 +29,13 @@ namespace CarBook.WebAPI.Controllers
             var value = await _mediator.Send(new GetCommentByIdQuery(id));
             return Ok(value);
         }
+        
+        [HttpGet("GetCommentListByBlogId/{id}")]
+        public async Task<IActionResult> GetCommentListByBlogId(int id)
+        {
+            var value = await _mediator.Send(new GetCommentsByBlogIdQuery(id));
+            return Ok(value);
+        }
 
         [HttpPost]
         public async Task<IActionResult> CreateComment(CreateCommentCommand request)

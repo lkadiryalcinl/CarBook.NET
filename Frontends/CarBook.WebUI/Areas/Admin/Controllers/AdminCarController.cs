@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CarBook.WebUI.Controllers
 {
+    [Area("Admin")]
+    [Route("Admin/AdminCar")]
     public class AdminCarController : Controller
     {
         private readonly HttpClientServiceAction _httpClientServiceAction;
@@ -16,6 +18,7 @@ namespace CarBook.WebUI.Controllers
             _httpClientServiceAction = httpClientServiceAction;
         }
 
+        [Route("Index")]
         public async Task<IActionResult> Index()
         {
             var values =  await _httpClientServiceAction.InvokeAsync<List<ResultAdminCarWithBrandDto>>("Cars/GetCarsListWithBrand");
@@ -23,6 +26,7 @@ namespace CarBook.WebUI.Controllers
         }
 
         [HttpGet]
+        [Route("CreateCar")]
         public async Task<IActionResult> CreateCar()
         {
             var values = await _httpClientServiceAction.InvokeAsync<List<ResultBrandDto>>("Brands");
@@ -36,20 +40,24 @@ namespace CarBook.WebUI.Controllers
             return View();
         }
 
+        [Route("CreateCar")]
         [HttpPost]
         public async Task<IActionResult> CreateCar(CreateCarDto createCarDto)
         {
             var isSucceded = await _httpClientServiceAction.CreateAsync<CreateCarDto>("Cars",createCarDto);
-            return isSucceded ? RedirectToAction("Index") : View();
+            return isSucceded ? RedirectToAction("Index", "AdminCar", new { area = "Admin" }) : View();
         }
 
+        [Route("RemoveCar/{id}")]
         public async Task<IActionResult> RemoveCar(int id)
         {
             var isSucceded = await _httpClientServiceAction.RemoveAsync($"Cars/{id}");
-            return isSucceded ? RedirectToAction("Index") : View();
+            return isSucceded ? RedirectToAction("Index", "AdminCar", new { area = "Admin" }) : View();
         }
 
+
         [HttpGet]
+        [Route("UpdateCar/{id}")]
         public async Task<IActionResult> UpdateCar(int id)
         {
             var brandvalues = await _httpClientServiceAction.InvokeAsync<List<ResultBrandDto>>("Brands");
@@ -68,10 +76,11 @@ namespace CarBook.WebUI.Controllers
         }
 
         [HttpPost]
+        [Route("UpdateCar/{id}")]
         public async Task<IActionResult> UpdateCar(UpdateCarDto updateCarDto)
         {
             var isSucceded = await _httpClientServiceAction.UpdateAsync<UpdateCarDto>("Cars", updateCarDto);
-            return isSucceded ? RedirectToAction("Index") : View();
+            return isSucceded ? RedirectToAction("Index","AdminCar",new {area = "Admin"}) : View();
         }
     }
 }

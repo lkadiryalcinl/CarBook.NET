@@ -1,0 +1,78 @@
+﻿@model List<ResultAdminCarWithBrandDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Araba Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Arabalarla ilgili ekleme, silme, güncelleme, arama ve listeleme
+                            gibi işlemleri bu sayfada yapabilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Marka</th>
+                                        <th>Model</th>
+                                        <th>Yıl</th>
+                                        <th>Kilometre</th>
+                                        <th>Sil</th>
+                                        <th>Güncelle</th>
+                                        <th>Detaylar</th>
+                                        <th>Sitede Gör</th>
+                                        <th>Fiyat Bilgileri</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.BrandName</td>
+                                            <td>@item.Model</td>
+                                            <td>@DateTime.Now.Year</td>
+                                            <td>@item.Kilometer</td>
+                                            <td>
+                                                <a href="/Admin/AdminCar/RemoveCar/@item.ID"
+                                                   class="btn btn-outline-danger">Sil</a>
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/AdminCar/UpdateCar/@item.ID"
+                                                   class="btn btn-outline-success">Güncelle</a>
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/AdminCar/CarDetail/@item.ID"
+                                                   class="btn btn-outline-dark">Ek Özellikler</a>
+                                            </td>
+                                            <td>
+                                                <a href="/Car/@item.ID"
+                                                   class="btn btn-outline-warning">Sitede Gör</a>
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/AdminCar/CarPrice/@item.ID"
+                                                   class="btn btn-outline-secondary">Sitede Gör</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminCar/CreateCar/"class="btn btn-outline-primary">Yeni Araç Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

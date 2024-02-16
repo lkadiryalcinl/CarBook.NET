@@ -21,6 +21,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.BannerHandlers
 
             return values.Select(x => new GetBannerQueryResult
             {
+                ID = x.ID,
                 Description = x.Description,
                 Title = x.Title,
                 VideoDescription = x.VideoDescription,
