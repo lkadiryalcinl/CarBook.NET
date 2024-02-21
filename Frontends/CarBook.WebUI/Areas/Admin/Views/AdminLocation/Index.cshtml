@@ -1,0 +1,57 @@
+﻿@model List<ResultLocationDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Konumlar Listesi</h4>
+                        <p class="card-subtitle mb-4">
+                            Konumlarla ilgili yeni Konum ekleme ,
+                            Konumlar listesi, Konumlar üzerinde düzenleme ve bir Konumı kaldırma işlemlerini
+                            buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Konum</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row" class="justify-content-center">@count</th>
+                                            <td>@item.Name</td>
+                                            <td>
+                                                <a href="/Admin/AdminLocation/RemoveLocation/@item.ID"
+                                                   class="btn btn-outline-danger">Sil</a>
+                                            </td>
+                                            <td>
+                                                <a href="/Admin/AdminLocation/UpdateLocation/@item.ID"
+                                                   class="btn btn-outline-success">Güncelle</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <a href="/Admin/AdminLocation/CreateLocation/" class="btn btn-outline-primary">Yeni Konum Girişi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

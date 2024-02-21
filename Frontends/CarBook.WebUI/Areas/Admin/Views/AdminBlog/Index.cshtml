@@ -3,24 +3,21 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
-    int count = 0;
 }
 
 <div class="page-content">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xl-12">
+            <div class="col-12">
                 <div class="card">
                     <div class="card-body">
                         <h4 class="card-title">Blog Listesi</h4>
                         <p class="card-subtitle mb-4">
-                            Blogları buradan silebilirsiniz.
+                            Blogları buradan yönetebilirsiniz.
                         </p>
-                        <div class="table-responsive">
-                            <table class="table mb-0">
+                        <table id="state-saving-datatable" class="table activate-select dt-responsive nowrap">
                                 <thead>
                                     <tr>
-                                        <th>#</th>
                                         <th>Başlık</th>
                                         <th>Yazar</th>
                                         <th>Kategori</th>
@@ -33,9 +30,7 @@
                                 <tbody>
                                     @foreach (var item in Model)
                                     {
-                                        count++;
                                         <tr>
-                                            <th scope="row">@count</th>
                                             <td>@item.Title</td>
                                             <td>@item.AuthorName</td>
                                             <td>@item.CategoryName</td>

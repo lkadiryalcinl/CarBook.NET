@@ -37,7 +37,7 @@ namespace CarBook.WebAPI.Controllers
             return Ok("Referans bilgisi eklendi.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveTestimonial(int id)
         {
             await _mediator.Send(new RemoveTestimonialCommand(id));

@@ -1,0 +1,57 @@
+﻿@model List<ResultContactDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Web Sayfası İletişim Mesajları</h4>
+                        <p class="card-subtitle mb-4">
+                            Web sayfasından iletişim için gelen mesajları buradan kontrol edebilir ya da silebilirsiniz.
+                        </p>
+
+                        <table id="state-saving-datatable" class="table activate-select dt-responsive nowrap">
+                            <thead>
+                                <tr>
+                                    <th>Isim</th>
+                                    <th>E-mail</th>
+                                    <th>Konu</th>
+                                    <th>Gönderilme Tarihi</th>
+                                    <th>Kaldır</th>
+                                    <th>Mesaj</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Name</td>
+                                        <td>@item.Email</td>
+                                        <td>@item.Subject</td>
+                                        <td>@item.SendDate</td>
+                                        <td>
+                                            <a href="/Admin/AdminContact/RemoveContact/@item.ID"
+                                               class="btn btn-outline-dark">Kaldır</a>
+                                        </td>
+                                        <td>@item.Message</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

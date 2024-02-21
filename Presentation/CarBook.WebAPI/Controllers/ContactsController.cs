@@ -37,7 +37,7 @@ namespace CarBook.WebAPI.Controllers
             return Ok("İletişim bilgisi eklendi.");
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> RemoveContact(int id)
         {
             await _mediator.Send(new RemoveContactCommand(id));

@@ -32,12 +32,5 @@ namespace CommentBook.WebUI.Controllers
             return isSucceded ? RedirectToAction("Index", "AdminComment", new { area = "Admin" }) : View();
         }
 
-        [Route("GetCommentsByCommentId/{id}")]
-        public async Task<IActionResult> GetCommentsByCommentId(int id)
-        {
-            var values = await _httpClientServiceAction.InvokeAsync<List<ResultCommentByBlogIdDto>>("Comments/GetAllCommentsWithAuthor");
-            return View(values);
-        }
-
     }
 }

@@ -20,6 +20,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.ServiceHandler
             var values = await _repository.GetAllAsync();
             return values.Select(x => new GetServiceQueryResult
             {
+                ID = x.ID,
                 Description = x.Description,
                 IconUrl = x.IconUrl,
                 Title = x.Title,

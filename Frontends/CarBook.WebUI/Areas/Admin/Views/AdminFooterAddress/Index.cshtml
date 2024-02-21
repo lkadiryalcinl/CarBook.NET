@@ -1,0 +1,58 @@
+﻿@model List<ResultFooterAddressDto>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+    int count = 0;
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Ana Sayfa Alt Adres Kısmı</h4>
+                        <p class="card-subtitle mb-4">
+                            Alt Adres üzerinde düzenleme işlemini buradan gerçekleştirebilirsiniz.
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Açıklama</th>
+                                        <th>Adres</th>
+                                        <th>E-mail</th>
+                                        <th>Telefon</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        count++;
+                                        <tr>
+                                            <th scope="row">@count</th>
+                                            <td>@item.Description</td>
+                                            <td>@item.Address</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.Phone</td>
+                                            <td>
+                                                <a href="/Admin/AdminFooterAddress/UpdateFooterAddress/@item.ID"
+                                                   class="btn btn-outline-success">Güncelle</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

@@ -1,4 +1,4 @@
-﻿@model CreateAuthorDto
+﻿@model CreateSocialMediaDto
 @{
     ViewData["Title"] = "CreateFeature";
     Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
@@ -10,25 +10,25 @@
             <div class="col-xl-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Yeni Yazar Girişi</h4>
+                        <h4 class="card-title">Yeni Sosyal Medya Girişi</h4>
                         <p class="card-subtitle mb-4">
-                            Yazar ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir. Veri girişlerinden sonra kaydet
+                            Sosyal medya ile ilgili temel bilgileri eksiksiz doldurmanız önemlidir. Veri girişlerinden sonra kaydet
                             butonuna tıklayarak işlemi tamamlayabilirsiniz.
                         </p>
                         <form method="post">
                             <div class="form-group">
-                                <label for="exampleInputName">Yazar Adı</label>
+                                <label for="exampleInputName">Sosyal Medya Adı</label>
                                 <input type="text" class="form-control" id="exampleInputName" asp-for="Name">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputName">Yazar Açıklaması</label>
-                                <input type="text" class="form-control" id="exampleInputName" asp-for="Description">
+                                <label for="exampleInputDesc">Sosyal Medya URL</label>
+                                <textarea class="form-control" id="exampleInputDesc" asp-for="Url"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputName">Yazar Fotoğraf Linki</label>
-                                <input type="text" class="form-control" id="exampleInputName" asp-for="ImageUrl">
+                                <label for="exampleInputIcon">Sosyal Medya Icon URL</label>
+                                <input type="text" class="form-control" id="exampleInputIcon" asp-for="Icon">
                             </div>
-                            <button type="submit" class="btn btn-primary waves-effect waves-light">Yazar Kaydet</button>
+                            <button type="submit" class="btn btn-primary waves-effect waves-light">Sosyal Medyayı Kaydet</button>
                         </form>
                     </div>
                 </div>

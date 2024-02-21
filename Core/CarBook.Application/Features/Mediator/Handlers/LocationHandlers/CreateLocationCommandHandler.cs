@@ -9,6 +9,10 @@ namespace CarBook.Application.Features.Mediator.Handlers.LocationHandlers
     {
         private readonly IRepository<Location> _repository;
 
+        public CreateLocationCommandHandler(IRepository<Location> repository)
+        {
+            _repository = repository;
+        }
 
         public async Task Handle(CreateLocationCommand request, CancellationToken cancellationToken)
         {
