@@ -12,6 +12,8 @@ using CarBook.Persistence.Repositories.TagCloudRepositories;
 using CarBook.Application.Interfaces.TagCloudInterfaces;
 using CarBook.Persistence.Repositories.CommentRepositories;
 using CarBook.Application.Interfaces.CommentInterfaces;
+using CarBook.Persistence.Repositories.StatisticRepositories;
+using CarBook.Application.Interfaces.StatisticInterfaces;
 
 namespace CarBook.Persistence.IoC.DependencyInjection
 {
@@ -29,6 +31,7 @@ namespace CarBook.Persistence.IoC.DependencyInjection
             builder.RegisterType<BlogRepository>().As<IBlogRepository>().InstancePerLifetimeScope();
             builder.RegisterType<TagCloudRepository>().As<ITagCloudRepository>().InstancePerLifetimeScope();
             builder.RegisterType<CommentRepository>().As<ICommentRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<StatisticRepository>().As<IStatisticsRepository>().InstancePerLifetimeScope();
 
         }
     }
