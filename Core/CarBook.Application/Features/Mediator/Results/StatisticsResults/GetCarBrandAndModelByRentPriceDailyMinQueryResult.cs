@@ -2,6 +2,6 @@
 {
     public class GetCarBrandAndModelByRentPriceDailyMinQueryResult
     {
-        public string GetCarBrandAndModelByRentPriceDailyMin { get; set; }
+        public string CarBrandAndModelByRentPriceDailyMin { get; set; }
     }
 }

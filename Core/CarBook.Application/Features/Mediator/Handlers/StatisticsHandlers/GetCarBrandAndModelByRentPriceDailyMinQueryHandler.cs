@@ -19,7 +19,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.StatisticsHandlers
             var value = await _repository.GetCarBrandAndModelByRentPriceDailyMin();
             return new GetCarBrandAndModelByRentPriceDailyMinQueryResult
             {
-                GetCarBrandAndModelByRentPriceDailyMin = value
+                CarBrandAndModelByRentPriceDailyMin = value
             };
         }
     }

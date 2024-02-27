@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CarBook.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [Route("Admin/AdminStatistics")]
+    [Route("Admin/AdminStatistic")]
     public class AdminStatisticsController : Controller
     {
         private readonly HttpClientServiceAction _httpClientServiceAction;
@@ -78,29 +78,29 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             #region İstatistik9
             var CarCountByTranmissionIsAutoRandom = random.Next(0, 101);
             var CarCountByTranmissionIsAutoValues = await _httpClientServiceAction.InvokeAsync<ResultStatisticsDto>("Statistics/GetCarCountByTranmissionIsAuto");
-            ViewBag.CarCountByTranmissionIsAuto = CarCountByTranmissionIsAutoValues.CarCountByTranmissionIsAuto;
+            ViewBag.CarCountByTranmissionIsAuto = CarCountByTranmissionIsAutoValues.CarCountByTransmissionIsAuto;
             ViewBag.CarCountByTranmissionIsAutoRandom = CarCountByTranmissionIsAutoRandom;
             #endregion
-            
+
             #region İstatistik10
             var BrandNameByMaxCarRandom = random.Next(0, 101);
             var BrandNameByMaxCarValues = await _httpClientServiceAction.InvokeAsync<ResultStatisticsDto>("Statistics/GetBrandNameByMaxCar");
             ViewBag.BrandNameByMaxCar = BrandNameByMaxCarValues.BrandNameByMaxCar;
             ViewBag.BrandNameByMaxCarRandom = BrandNameByMaxCarRandom;
             #endregion
-            
+
             #region İstatistik11
             var BlogTitleByMaxBlogCommentRandom = random.Next(0, 101);
             var BlogTitleByMaxBlogCommentValues = await _httpClientServiceAction.InvokeAsync<ResultStatisticsDto>("Statistics/GetBlogTitleByMaxBlogComment");
             ViewBag.BlogTitleByMaxBlogComment = BlogTitleByMaxBlogCommentValues.BlogTitleByMaxBlogComment;
             ViewBag.BlogTitleByMaxBlogCommentRandom = BlogTitleByMaxBlogCommentRandom;
             #endregion
-            
+
             #region İstatistik12
-            var CarCountByKmSmallerThen1000Random = random.Next(0, 101);
-            var CarCountByKmSmallerThen1000Values = await _httpClientServiceAction.InvokeAsync<ResultStatisticsDto>("Statistics/GetCarCountByKmSmallerThen1000");
-            ViewBag.CarCountByKmSmallerThen1000 = CarCountByKmSmallerThen1000Values.CarCountByKmSmallerThen1000;
-            ViewBag.CarCountByKmSmallerThen1000Random = CarCountByKmSmallerThen1000Random;
+            var CarCountByKmSmallerThen10000Random = random.Next(0, 101);
+            var CarCountByKmSmallerThen10000Values = await _httpClientServiceAction.InvokeAsync<ResultStatisticsDto>("Statistics/GetCarCountByKmSmallerThen10000");
+            ViewBag.CarCountByKmSmallerThen10000 = CarCountByKmSmallerThen10000Values.CarCountByKmSmallerThen10000;
+            ViewBag.CarCountByKmSmallerThen10000Random = CarCountByKmSmallerThen10000Random;
             #endregion
             
             #region İstatistik13
@@ -116,21 +116,21 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
             ViewBag.CarCountByFuelElectric = CarCountByFuelElectricValues.CarCountByFuelElectric;
             ViewBag.CarCountByFuelElectricRandom = CarCountByFuelElectricRandom;
             #endregion
-            
+
             #region İstatistik15
             var CarBrandAndModelByRentPriceDailyMaxRandom = random.Next(0, 101);
             var CarBrandAndModelByRentPriceDailyMaxValues = await _httpClientServiceAction.InvokeAsync<ResultStatisticsDto>("Statistics/GetCarBrandAndModelByRentPriceDailyMax");
             ViewBag.CarBrandAndModelByRentPriceDailyMax = CarBrandAndModelByRentPriceDailyMaxValues.CarBrandAndModelByRentPriceDailyMax;
             ViewBag.CarBrandAndModelByRentPriceDailyMaxRandom = CarBrandAndModelByRentPriceDailyMaxRandom;
             #endregion
-            
+
             #region İstatistik16
             var CarBrandAndModelByRentPriceDailyMinRandom = random.Next(0, 101);
             var CarBrandAndModelByRentPriceDailyMinValues = await _httpClientServiceAction.InvokeAsync<ResultStatisticsDto>("Statistics/GetCarBrandAndModelByRentPriceDailyMin");
             ViewBag.CarBrandAndModelByRentPriceDailyMin = CarBrandAndModelByRentPriceDailyMinValues.CarBrandAndModelByRentPriceDailyMin;
             ViewBag.CarBrandAndModelByRentPriceDailyMinRandom = CarBrandAndModelByRentPriceDailyMinRandom;
             #endregion
-            
+
             return View();
         }
     }

@@ -13,6 +13,7 @@ namespace CarBook.Persistence.Context
                 "integrated Security=true;" +
                 "TrustServerCertificate=true");
         }
+
         public DbSet<About> Abouts { get; set; }
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Brand> Brands { get; set; }
@@ -33,6 +34,7 @@ namespace CarBook.Persistence.Context
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<TagCloud> TagClouds { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<RentACar> RentACars { get; set; }
 
     }
 }
