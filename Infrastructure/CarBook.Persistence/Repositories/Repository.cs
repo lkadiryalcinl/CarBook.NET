@@ -6,7 +6,7 @@ namespace CarBook.Persistence.Repositories
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly CarBookContext _context;
+        protected readonly CarBookContext _context;
 
         public Repository(CarBookContext context)
         {

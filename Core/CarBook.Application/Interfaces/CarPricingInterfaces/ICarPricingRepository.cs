@@ -2,7 +2,7 @@
 
 namespace CarBook.Application.Interfaces.CarPricingInterfaces
 {
-    public interface ICarPricingRepository
+    public interface ICarPricingRepository : IRepository<CarPricing>
     {
         Task<List<CarPricing>> GetCarsWithPricings();
         Task<List<CarPricing>> GetCarsWithPricingsDaily();

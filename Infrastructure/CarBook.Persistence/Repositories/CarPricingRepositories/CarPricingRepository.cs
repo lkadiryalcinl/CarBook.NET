@@ -5,13 +5,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarBook.Persistence.Repositories.CarPricingRepositories
 {
-    public class CarPricingRepository : ICarPricingRepository
+    public class CarPricingRepository : Repository<CarPricing>,ICarPricingRepository
     {
-        private readonly CarBookContext _context;
-
-        public CarPricingRepository(CarBookContext context)
+        public CarPricingRepository(CarBookContext context) : base(context)
         {
-            _context = context;
         }
 
         public async Task<List<CarPricing>> GetCarsWithPricings()

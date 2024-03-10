@@ -14,6 +14,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.CommentHandlers
             _repository = repository;
         }
 
+
         public async Task Handle(CreateCommentCommand request, CancellationToken cancellationToken)
         {
             await _repository.CreateAsync(new Comment

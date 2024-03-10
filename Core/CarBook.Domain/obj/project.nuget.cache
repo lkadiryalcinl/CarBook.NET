@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t+IhKPClBEvGhyB4L1uCCUgG7yK9K+1ehmO1S6JmZX1tHmPaL4zt2T8gvmkzG8gAguRgpjt/ra8NOPt9aog6XA==",
+  "dgSpecHash": "u6Dm1N1Ws+m48vSS82c0jJqfSYMmL3PwP7xJUTkjfYZ6lhvDHn5m6ni5hRCl+oxiQ7GdfFG9Or8Rr2qggjzA8Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\CarBook\\Core\\CarBook.Domain\\CarBook.Domain.csproj",
+  "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\CarBook.NET\\Core\\CarBook.Domain\\CarBook.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

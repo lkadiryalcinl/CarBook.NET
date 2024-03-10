@@ -1,7 +1,6 @@
 ﻿using Autofac;
 using CarBook.Application.Interfaces.CarInterfaces;
 using CarBook.Application.Interfaces;
-using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories.CarRepositories;
 using CarBook.Persistence.Repositories;
 using CarBook.Application.Interfaces.BlogInterfaces;
@@ -14,6 +13,8 @@ using CarBook.Persistence.Repositories.CommentRepositories;
 using CarBook.Application.Interfaces.CommentInterfaces;
 using CarBook.Persistence.Repositories.StatisticRepositories;
 using CarBook.Application.Interfaces.StatisticInterfaces;
+using CarBook.Application.Interfaces.RentACarInterfaces;
+using CarBook.Persistence.Repositories.RentACarRepositories;
 
 namespace CarBook.Persistence.IoC.DependencyInjection
 {
@@ -21,9 +22,6 @@ namespace CarBook.Persistence.IoC.DependencyInjection
     {
         protected override void Load(ContainerBuilder builder)
         {
-            // Main Context Registiration
-            builder.RegisterType<CarBookContext>().AsSelf().AsImplementedInterfaces().InstancePerLifetimeScope();
-
             //Mediator Registirations
             builder.RegisterGeneric(typeof(Repository<>)).As(typeof(IRepository<>)).InstancePerLifetimeScope();
             builder.RegisterType<CarRepository>().As<ICarRepository>().InstancePerLifetimeScope();
@@ -32,6 +30,7 @@ namespace CarBook.Persistence.IoC.DependencyInjection
             builder.RegisterType<TagCloudRepository>().As<ITagCloudRepository>().InstancePerLifetimeScope();
             builder.RegisterType<CommentRepository>().As<ICommentRepository>().InstancePerLifetimeScope();
             builder.RegisterType<StatisticRepository>().As<IStatisticsRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<RentACarRepository>().As<IRentACarRepository>().InstancePerLifetimeScope();
 
         }
     }

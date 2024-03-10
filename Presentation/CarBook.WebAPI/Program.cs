@@ -2,6 +2,8 @@ using Autofac.Extensions.DependencyInjection;
 using Autofac;
 using CarBook.Persistence.IoC.DependencyInjection;
 using CarBook.Application.Services;
+using CarBook.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,9 +16,15 @@ builder.Services.AddCors(opt =>
 });
 
 builder.Services.AddControllers();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<CarBookContext>(opt =>
+{
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("CarBookDatabase"));
+});
 
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 

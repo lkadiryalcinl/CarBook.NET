@@ -5,13 +5,9 @@ namespace CarBook.Persistence.Context
 {
     public class CarBookContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public CarBookContext(DbContextOptions<CarBookContext> options)
+            : base(options)
         {
-
-            optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;" +
-                "initial Catalog=CarBookDb;" +
-                "integrated Security=true;" +
-                "TrustServerCertificate=true");
         }
 
         public DbSet<About> Abouts { get; set; }
