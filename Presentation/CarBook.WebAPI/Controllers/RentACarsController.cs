@@ -19,7 +19,7 @@ namespace CarBook.WebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetRentACarListByLocation(int locationID, bool available)
         {
-            GetRentACarQuery getRentACarQuery = new GetRentACarQuery()
+            GetRentACarQuery getRentACarQuery = new()
             {
                 Available = available,
                 LocationID = locationID
