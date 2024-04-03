@@ -29,5 +29,12 @@ namespace CarBook.WebAPI.Controllers
             var values = await _mediator.Send(new GetCarPricingWithCarDailyQuery());
             return Ok(values);
         }
+        
+        [HttpGet("GetCarPricingWithTimePeriodList")]
+        public async Task<IActionResult> GetCarPricingWithTimePeriodList()
+        {
+            var values = await _mediator.Send(new GetCarPricingWithTimePeriodQuery());
+            return Ok(values);
+        }
     }
 }

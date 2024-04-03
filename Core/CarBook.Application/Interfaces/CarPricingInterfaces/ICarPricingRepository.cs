@@ -1,4 +1,5 @@
-﻿using CarBook.Domain.Entities;
+﻿using CarBook.Application.ViewModel;
+using CarBook.Domain.Entities;
 
 namespace CarBook.Application.Interfaces.CarPricingInterfaces
 {
@@ -6,5 +7,6 @@ namespace CarBook.Application.Interfaces.CarPricingInterfaces
     {
         Task<List<CarPricing>> GetCarsWithPricings();
         Task<List<CarPricing>> GetCarsWithPricingsDaily();
+        List<CarPricingViewModel> GetCarPricingsWithTimePeriod();
     }
 }

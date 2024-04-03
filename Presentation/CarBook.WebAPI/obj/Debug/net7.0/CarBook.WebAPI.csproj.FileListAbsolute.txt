@@ -519,7 +519,6 @@ C:\Users\ASUS\source\repos\CarBook.NET\Presentation\CarBook.WebAPI\obj\Debug\net
 C:\Users\ASUS\source\repos\CarBook.NET\Presentation\CarBook.WebAPI\obj\Debug\net7.0\CarBook.WebAPI.AssemblyInfoInputs.cache
 C:\Users\ASUS\source\repos\CarBook.NET\Presentation\CarBook.WebAPI\obj\Debug\net7.0\CarBook.WebAPI.AssemblyInfo.cs
 C:\Users\ASUS\source\repos\CarBook.NET\Presentation\CarBook.WebAPI\obj\Debug\net7.0\CarBook.WebAPI.csproj.CoreCompileInputs.cache
-C:\Users\ASUS\source\repos\CarBook.NET\Presentation\CarBook.WebAPI\obj\Debug\net7.0\CarBook.WebAPI.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\ASUS\source\repos\CarBook.NET\Presentation\CarBook.WebAPI\obj\Debug\net7.0\CarBook.WebAPI.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\ASUS\source\repos\CarBook.NET\Presentation\CarBook.WebAPI\obj\Debug\net7.0\CarBook.WebAPI.sourcelink.json
 C:\Users\ASUS\source\repos\CarBook.NET\Presentation\CarBook.WebAPI\obj\Debug\net7.0\staticwebassets.build.json
