@@ -1,9 +1,11 @@
 ﻿using CarBook.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarBook.Persistence.Context
 {
-    public class CarBookContext : DbContext
+    public class CarBookContext : IdentityDbContext<User,IdentityRole<int>,int>
     {
         public CarBookContext(DbContextOptions<CarBookContext> options)
             : base(options)
@@ -48,8 +50,6 @@ namespace CarBook.Persistence.Context
                 .WithMany(y => y.DropOffReservation)
                 .HasForeignKey(z => z.DropOffLocationID)
                 .OnDelete(DeleteBehavior.ClientSetNull);
-
-
         }
 
     }
