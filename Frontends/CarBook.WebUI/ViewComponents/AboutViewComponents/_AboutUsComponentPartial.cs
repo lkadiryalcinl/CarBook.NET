@@ -1,6 +1,8 @@
 ﻿using CarBook.Dto.AboutDtos;
+using CarBook.Dto.StatisticsDtos;
 using CarBook.WebUI.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace CarBook.WebUI.ViewComponents.AboutViewComponents
 {
@@ -15,7 +17,7 @@ namespace CarBook.WebUI.ViewComponents.AboutViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-           return await _httpClientService.InvokeAsync<ResultAboutDto>("Abouts/1");
+            return await _httpClientService.InvokeAsync<ResultAboutDto>("Abouts/1");
         }
     }
 }

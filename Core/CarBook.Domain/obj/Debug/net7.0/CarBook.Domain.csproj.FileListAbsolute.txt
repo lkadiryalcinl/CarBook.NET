@@ -22,3 +22,15 @@ C:\Users\ASUS\source\repos\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\CarB
 C:\Users\ASUS\source\repos\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\refint\CarBook.Domain.dll
 C:\Users\ASUS\source\repos\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.pdb
 C:\Users\ASUS\source\repos\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\ref\CarBook.Domain.dll
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\bin\Debug\net7.0\CarBook.Domain.deps.json
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\bin\Debug\net7.0\CarBook.Domain.dll
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\bin\Debug\net7.0\CarBook.Domain.pdb
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.sourcelink.json
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.dll
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\refint\CarBook.Domain.dll
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\CarBook.Domain.pdb
+C:\Users\ASUS\Desktop\CarBook.NET\Core\CarBook.Domain\obj\Debug\net7.0\ref\CarBook.Domain.dll

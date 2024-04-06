@@ -19,6 +19,7 @@ namespace CarBook.Application.Features.Mediator.Handlers.CarHandlers
             var values = await _repository.GetCarsWithPricingsDaily();
             return values.Select(x => new GetCarPricingWithCarDailyQueryResult
             {
+                ID = x.Car.ID,
                 Model = x.Car.Model,
                 CoverImageUrl = x.Car.CoverImageUrl,
                 BrandName = x.Car.Brand.Name,

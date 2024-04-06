@@ -14,15 +14,15 @@
                     @foreach (var item in Model)
                     {
                         <div class="item">
-                            <div class="testimony-wrap rounded text-center py-4 pb-5">
-                                <div class="user-img mb-2" style="background-image: url(@item.ImageUrl)">
+                                <div class="testimony-wrap rounded text-center py-4 pb-5">
+                                    <div class="user-img mb-2" style="background-image: url(@item.ImageUrl)">
+                                    </div>
+                                    <div class="text pt-4">
+                                        <p class="mb-4">@item.Comment</p>
+                                        <p class="name">@item.Name</p>
+                                        <span class="position">@item.Title</span>
+                                    </div>
                                 </div>
-                                <div class="text pt-4">
-                                    <p class="mb-4">@item.Comment</p>
-                                    <p class="name">@item.Name</p>
-                                    <span class="position">@item.Title</span>
-                                </div>
-                            </div>
                         </div>
                     }
                 </div>

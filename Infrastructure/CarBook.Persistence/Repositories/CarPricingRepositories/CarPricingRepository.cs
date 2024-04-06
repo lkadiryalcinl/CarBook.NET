@@ -17,7 +17,7 @@ namespace CarBook.Persistence.Repositories.CarPricingRepositories
             List<CarPricingViewModel> values = new();
             using (var command = _context.Database.GetDbConnection().CreateCommand())
             {
-                command.CommandText = "Select * From (Select Model,Name,CoverImageUrl,PricingID,Amount From CarPricings Inner Join Cars On Cars.ID=CarPricings.CarId Inner Join Brands On Brands.ID=Cars.BrandID) As SourceTable Pivot (Sum(Amount) For PricingID In ([1],[2],[3])) as PivotTable;";
+                command.CommandText = "Select * From (Select Cars.ID as CarID,Model,Name,CoverImageUrl,PricingID,Amount From CarPricings Inner Join Cars On Cars.ID=CarPricings.CarId Inner Join Brands On Brands.ID=Cars.BrandID) As SourceTable Pivot (Sum(Amount) For PricingID In ([1],[2],[3])) as PivotTable;";
                 command.CommandType = System.Data.CommandType.Text;
                 _context.Database.OpenConnection();
                 using (var reader = command.ExecuteReader())
@@ -26,6 +26,7 @@ namespace CarBook.Persistence.Repositories.CarPricingRepositories
                     {
                         CarPricingViewModel carPricingViewModel = new()
                         {
+                            ID = Convert.ToInt32(reader["CarID"].ToString()),
                             Brand = reader["Name"].ToString(),
                             Model = reader["Model"].ToString(),
                             CoverImageUrl = reader["CoverImageUrl"].ToString(),

@@ -6,6 +6,7 @@
         {
             Amounts = new List<decimal>();
         }
+        public int ID { get; set; }
         public string Model { get; set; }
         public List<Decimal> Amounts { get; set; }
         public string CoverImageUrl { get; set; }
