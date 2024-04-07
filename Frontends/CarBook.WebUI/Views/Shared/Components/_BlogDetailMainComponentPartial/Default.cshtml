@@ -9,9 +9,9 @@
     @await Component.InvokeAsync("_BlogDetailAuthorInfoComponentPartial", new { id = Model.ID })
 
     <div class="pt-5 mt-5">
-        <h3 class="mb-5">6 Yorum</h3>
+        <h3 class="mb-5">@Model.CommentsCount Yorum</h3>
 
-        @await Component.InvokeAsync("_CommentListByBlogComponentPartial")
+        @await Component.InvokeAsync("_CommentListByBlogComponentPartial", new { id = Model.ID })
         
         @await Component.InvokeAsync("_AddCommentComponentPartial")
     </div>

@@ -29,5 +29,18 @@ namespace CarBook.WebUI.Services
 
             return View();
         }
+
+        public async Task<TDto> InvokeAsyncVal<TDto>(string path)
+        {
+            var responseMessage = await _httpClient.GetAsync(path);
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<TDto>(jsonData);
+                return values;
+            }
+            return default(TDto);
+        }
     }
 }

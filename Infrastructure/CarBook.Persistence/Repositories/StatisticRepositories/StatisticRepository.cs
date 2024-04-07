@@ -162,6 +162,5 @@ namespace CarBook.Persistence.Repositories.StatisticRepositories
                 FirstOrDefaultAsync();
             return brandName;
         }
-
     }
 }

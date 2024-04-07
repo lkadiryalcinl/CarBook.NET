@@ -1,4 +1,5 @@
 ﻿using CarBook.Dto.BlogDtos;
+using CarBook.Dto.CommentDtos;
 using CarBook.WebUI.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -34,6 +35,8 @@ namespace CarBook.WebUI.Controllers
             ViewBag.v2 = "Blog Detayı ve Yorumlar";
 
             ViewBag.blogId = id;
+            var val = await _httpClientService.InvokeAsync<ResultCommentCountByBlogId>($"Comments/GetCommentsCountByBlogIdQuery/{id}");
+            ViewBag.CommentsCount = val.CommentCount;
 
             var values = await _httpClientService.InvokeAsync<GetBlogById>($"Blogs/{id}");
             return View(values);

@@ -1,35 +1,4 @@
-﻿<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-<script>
-    $(document).ready(function () {
-        $('#btn1').click(function () {
-            swal("Şartlar & Koşullar", "Araba kiralama sürecine dair tüm hizmet koşullarına rezervasyonun fiziki olarak gerçekleştirileceği ofislerimizde yer alan anlaşma dokümanlarından ulaşabilirsiniz. Bütün sürecin hasar, ceza, geçişler (hgs, ogs vs.) ile ilgili detaylar yer almaktadır. Keyifli yolculuklar dileriz.");
-        });
-
-        $('#btn2').click(function () {
-            swal("Güvenlik", "CarBook web sitemiz AspNet Core teknolojisinde Sha256 şifreleme tekniğiyle verilerin tamamen şifreli olarak tutulması alt yapısına sahiptir. Sistemimizde JWT doğrulaması yapılmaktadır. Kullanıcılarımızın ödeme yaptıkları kart bilgileri sistemde kesinlikle saklanmamaktadır. TC. Kimlik Numarası, Mail Adresi ve telefon gibi bilgileri ise şifrelenerek tutulmaktadır.");
-        });
-
-        $('#btn3').click(function () {
-            swal("Çerez Politikası", "Sizlere daha iyi hizmet sunabilmek adına tarayıcı çerezlerini kullanmaktayız.");
-        });
-
-        $('#btn4').click(function () {
-            swal("Sıkça Sorulan Sorular", "Sistem ile ilgili sık sorulan sorular yer alır.");
-        });
-
-        $('#btn5').click(function () {
-            swal("Ödeme Yöntemleri", "Ödeme işlemleri yalnızca fiziki lokasyonlarımızdaki kiralama noktalarında kart ile yapılmaktadır.");
-        });
-
-        $('#btn6').click(function () {
-            swal("Nasıl Çalışır", "1.Adım Aracınızını Kiralayın \n 2.Adım Mailiniz Kontrol Edin. \n 3.Adım Ofisimize gelin.");
-        });
-    });
-</script>
-
-@model ResultFooterAddressDto
+﻿@model ResultFooterAddressDto
 
 <footer id="footer" class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
@@ -95,3 +64,33 @@
 
 <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
 
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#btn1').click(function () {
+            swal("Şartlar & Koşullar", "Araba kiralama sürecine dair tüm hizmet koşullarına rezervasyonun fiziki olarak gerçekleştirileceği ofislerimizde yer alan anlaşma dokümanlarından ulaşabilirsiniz. Bütün sürecin hasar, ceza, geçişler (hgs, ogs vs.) ile ilgili detaylar yer almaktadır. Keyifli yolculuklar dileriz.");
+        });
+
+        $('#btn2').click(function () {
+            swal("Güvenlik", "CarBook web sitemiz AspNet Core teknolojisinde Sha256 şifreleme tekniğiyle verilerin tamamen şifreli olarak tutulması alt yapısına sahiptir. Sistemimizde JWT doğrulaması yapılmaktadır. Kullanıcılarımızın ödeme yaptıkları kart bilgileri sistemde kesinlikle saklanmamaktadır. TC. Kimlik Numarası, Mail Adresi ve telefon gibi bilgileri ise şifrelenerek tutulmaktadır.");
+        });
+
+        $('#btn3').click(function () {
+            swal("Çerez Politikası", "Sizlere daha iyi hizmet sunabilmek adına tarayıcı çerezlerini kullanmaktayız.");
+        });
+
+        $('#btn4').click(function () {
+            swal("Sıkça Sorulan Sorular", "Sistem ile ilgili sık sorulan sorular yer alır.");
+        });
+
+        $('#btn5').click(function () {
+            swal("Ödeme Yöntemleri", "Ödeme işlemleri yalnızca fiziki lokasyonlarımızdaki kiralama noktalarında kart ile yapılmaktadır.");
+        });
+
+        $('#btn6').click(function () {
+            swal("Nasıl Çalışır", "1.Adım Aracınızını Kiralayın \n 2.Adım Mailiniz Kontrol Edin. \n 3.Adım Ofisimize gelin.");
+        });
+    });
+</script>

@@ -13,9 +13,12 @@ namespace CarBook.WebUI.ViewComponents.BlogViewComponents
             _component = component;
         }
 
-        public async Task<IViewComponentResult> InvokeAsync(int id)
+        public async Task<IViewComponentResult> InvokeAsync(int id,int CommentsCount)
         {
-            return await _component.InvokeAsync<GetBlogById>($"Blogs/{id}");
+
+            var values =  await _component.InvokeAsyncVal<GetBlogById>($"Blogs/{id}");
+            values.CommentsCount = CommentsCount;
+            return View(values);
         }
     }
 }
