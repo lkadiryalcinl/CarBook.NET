@@ -8,5 +8,6 @@
         public string Content { get; set; }
         public string imageUrl { get; set; }
         public int BlogID { get; set; }
+        public string? Mail { get; set; }
     }
 }

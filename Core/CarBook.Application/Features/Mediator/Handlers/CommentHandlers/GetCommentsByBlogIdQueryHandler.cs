@@ -24,7 +24,8 @@ namespace CarBook.Application.Features.Mediator.Handlers.CommentHandlers
                 Content = x.Content,
                 imageUrl = x.imageUrl,
                 CreatedDate = x.CreatedDate,
-                BlogID = x.BlogID
+                BlogID = x.BlogID,
+                Mail = x.Mail,
             }).ToList();
         }
     }

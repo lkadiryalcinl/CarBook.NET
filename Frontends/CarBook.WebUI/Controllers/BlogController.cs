@@ -1,4 +1,5 @@
 ﻿using CarBook.Dto.BlogDtos;
+using CarBook.Dto.CarDtos;
 using CarBook.Dto.CommentDtos;
 using CarBook.WebUI.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -35,11 +36,27 @@ namespace CarBook.WebUI.Controllers
             ViewBag.v2 = "Blog Detayı ve Yorumlar";
 
             ViewBag.blogId = id;
-            var val = await _httpClientService.InvokeAsync<ResultCommentCountByBlogId>($"Comments/GetCommentsCountByBlogIdQuery/{id}");
+            var val = await _httpClientService.InvokeAsync<ResultCommentCountByBlogIdDto>($"Comments/GetCommentsCountByBlogIdQuery/{id}");
             ViewBag.CommentsCount = val.CommentCount;
 
             var values = await _httpClientService.InvokeAsync<GetBlogById>($"Blogs/{id}");
             return View(values);
+        }
+
+        [HttpGet]
+        public async Task<PartialViewResult> AddComment(int id)
+        {
+            ViewBag.blogId = id;
+            return PartialView();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddComment(CreateCommentDto createCommentDto)
+        {
+            createCommentDto.CreatedDate = DateTime.Now;
+            createCommentDto.ImageUrl = "";
+            var isSucceded = await _httpClientService.CreateAsync<CreateCommentDto>("Comments", createCommentDto);
+            return isSucceded ? RedirectToAction("BlogDetail", "Blog", new { id = createCommentDto.BlogID }) : View();
         }
     }
 }

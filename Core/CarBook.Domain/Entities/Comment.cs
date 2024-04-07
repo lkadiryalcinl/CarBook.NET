@@ -8,6 +8,6 @@
         public string imageUrl { get; set; }
         public int BlogID { get; set; }
         public Blog Blog { get; set; }
-
+        public string? Mail { get; set; }
     }
 }
