@@ -1,6 +1,7 @@
 ﻿using CarBook.Dto.BlogDtos;
 using CarBook.Dto.CarDtos;
 using CarBook.Dto.CommentDtos;
+using CarBook.Dto.UserDtos;
 using CarBook.WebUI.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -55,14 +56,19 @@ namespace CarBook.WebUI.Controllers
             return PartialView();
         }
 
-        [Authorize(Roles ="USER")]
+        [Authorize(Roles = "USER,ADMIN")]
         [HttpPost]
         public async Task<IActionResult> AddComment(CreateCommentDto createCommentDto)
         {
+            var id = HttpContext.User.Identity.Name;
+            var user = await _httpClientService.InvokeAsync<ResultUserDto>($"Users/{id}");
             createCommentDto.CreatedDate = DateTime.Now;
             createCommentDto.ImageUrl = "";
+            createCommentDto.Name = user.UserName;
+            createCommentDto.Mail = user.Email;
             var isSucceded = await _httpClientService.CreateAsync<CreateCommentDto>("Comments", createCommentDto);
             return isSucceded ? RedirectToAction("BlogDetail", "Blog", new { id = createCommentDto.BlogID }) : View();
         }
+
     }
 }
