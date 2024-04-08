@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.ContactDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ContactBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminContact")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminContactController : Controller
     {
 

@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.SocialMedia;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SocialMediaBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminSocialMedia")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminSocialMediaController : Controller
     {
 

@@ -2,6 +2,7 @@
 using CarBook.Dto.BrandDtos;
 using CarBook.Dto.CarDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -9,6 +10,7 @@ namespace CarBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminCar")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminCarController : Controller
     {
         private readonly HttpClientServiceAction _httpClientServiceAction;

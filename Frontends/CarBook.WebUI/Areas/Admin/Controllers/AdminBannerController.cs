@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.BannerDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BannerBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminBanner")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminBannerController : Controller
     {
 

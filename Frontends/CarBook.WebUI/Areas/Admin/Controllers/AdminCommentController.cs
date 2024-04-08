@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.CommentDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CommentBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminComment")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminCommentController : Controller
     {
 

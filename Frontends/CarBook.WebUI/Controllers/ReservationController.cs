@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.LocationDtos;
 using CarBook.Dto.ReservationDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CarBook.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class ReservationController : Controller
     {
         private readonly HttpClientServiceAction _httpClientServiceAction;
@@ -20,7 +22,7 @@ namespace CarBook.WebUI.Controllers
         {
             ViewBag.v1 = "Araç Kiralama";
             ViewBag.v2 = "Araç Rezervasyon Formu";
-            ViewBag.v3 = id;
+            ViewBag.CarID = id;
             var values = await _httpClientServiceAction.InvokeAsync<List<ResultLocationDto>>("Locations");
             List<SelectListItem> values2 = (from x in values
                                             select new SelectListItem

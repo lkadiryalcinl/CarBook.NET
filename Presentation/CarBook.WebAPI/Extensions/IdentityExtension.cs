@@ -35,13 +35,8 @@ namespace CarBook.WebAPI.Extensions
         public static void AddAuthAndJwtBearerEx(this IServiceCollection services, IConfiguration configuration)
         {
             services
-                .AddAuthentication(options =>
-                {
-                    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-                }).
-                AddJwtBearer(options =>
+                .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
                 {
                     options.SaveToken = true;
                     options.RequireHttpsMetadata = false;
@@ -54,6 +49,6 @@ namespace CarBook.WebAPI.Extensions
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]))
                     };
                 });
-                    }
+        }
     }
 }

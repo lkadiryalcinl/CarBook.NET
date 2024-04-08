@@ -2,10 +2,12 @@
 using CarBook.Dto.CarDtos;
 using CarBook.Dto.CommentDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarBook.WebUI.Controllers
 {
+    [Authorize]
     public class BlogController : Controller
     {
         private readonly HttpClientServiceAction _httpClientService;
@@ -15,6 +17,7 @@ namespace CarBook.WebUI.Controllers
             _httpClientService = httpClientServiceAction;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             ViewBag.v1 = "Blog";
@@ -30,6 +33,7 @@ namespace CarBook.WebUI.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> BlogDetail(int id)
         {
             ViewBag.v1 = "Blog";
@@ -43,6 +47,7 @@ namespace CarBook.WebUI.Controllers
             return View(values);
         }
 
+        [AllowAnonymous]
         [HttpGet]
         public async Task<PartialViewResult> AddComment(int id)
         {
@@ -50,6 +55,7 @@ namespace CarBook.WebUI.Controllers
             return PartialView();
         }
 
+        [Authorize(Roles ="USER")]
         [HttpPost]
         public async Task<IActionResult> AddComment(CreateCommentDto createCommentDto)
         {

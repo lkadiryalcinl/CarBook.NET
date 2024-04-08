@@ -1,12 +1,12 @@
 ﻿using CarBook.Dto.LocationDtos;
-using CarBook.WebUI.Models;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Diagnostics;
 
 namespace CarBook.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly HttpClientServiceAction _httpClientServiceAction;

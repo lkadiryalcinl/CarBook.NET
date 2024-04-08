@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.AboutDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AboutBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminAbout")]
+    [Authorize(Roles ="ADMIN")]
     public class AdminAboutController : Controller
     {
 

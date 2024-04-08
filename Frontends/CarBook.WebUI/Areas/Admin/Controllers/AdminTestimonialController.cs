@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.TestimonialDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TestimonialBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminTestimonial")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminTestimonialController : Controller
     {
 

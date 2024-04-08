@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.BrandDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BrandBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminBrand")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminBrandController : Controller
     {
 

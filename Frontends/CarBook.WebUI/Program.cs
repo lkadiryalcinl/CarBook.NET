@@ -1,12 +1,14 @@
-using CarBook.WebUI.Services;
+using CarBook.WebUI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
-builder.Services.AddScoped<HttpClientServiceViewComponent>();
-builder.Services.AddScoped<HttpClientServiceAction>();
+
+builder.Services.AddDI();
+
+builder.Services.AddJwtBearerEx();
 
 var app = builder.Build();
 
@@ -23,6 +25,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

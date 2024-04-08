@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.StatisticsDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarBook.WebUI.Areas.Admin.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminStatistic")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminStatisticsController : Controller
     {
         private readonly HttpClientServiceAction _httpClientServiceAction;

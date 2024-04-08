@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.BlogDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BlogBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminBlog")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminBlogController : Controller
     {
 

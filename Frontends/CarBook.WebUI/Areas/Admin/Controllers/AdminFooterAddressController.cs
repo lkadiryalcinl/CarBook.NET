@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.FooterAddressDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FooterAddressBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminFooterAddress")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminFooterAddressController : Controller
     {
 

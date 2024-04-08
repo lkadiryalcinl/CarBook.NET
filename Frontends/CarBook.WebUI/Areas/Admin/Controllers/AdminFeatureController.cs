@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.FeatureDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FeatureBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminFeature")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminFeatureController : Controller
     {
 

@@ -5,7 +5,6 @@ using CarBook.Persistence.Roles;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -46,36 +45,22 @@ namespace CarBook.Persistence.Repositories.AuthRepositories
                     Message = "Invalid Credentials"
                 };
 
-
             var userRoles = await _userManager.GetRolesAsync(user);
 
-            //claim : jwt içeriğindeki her bir yapı  
-            //jwt content
-            //        new Claim("FirstName", user.FirstName), string içerisine tanımlamak 
-            // için istediğimizi yazabiliriz.
             var authClaims = new List<Claim>
             {
                 new(ClaimTypes.Name, user.UserName),
                 new(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new("JWTID", Guid.NewGuid().ToString()),
-                new("FirstName", user.FirstName),
-                new("LastName", user.LastName),
+                new(ClaimTypes.GivenName, user.FirstName+" "+user.LastName),
 
             };
 
-            // "parellel" thread kullanılıyor
-            // normal foreachten farkını görebilirsin
             Parallel.ForEach(userRoles, role =>
             {
                 authClaims.Add(new Claim(ClaimTypes.Role, role));
             });
 
-            /*
-            foreach (var userRole in userRoles)
-            {
-                authClaims.Add(new Claim(ClaimTypes.Role, userRole));
-            }
-            */
             var token = GenerateNewJsonWebToken(authClaims);
             return new AuthServiceResponseDto()
             {
@@ -158,8 +143,6 @@ namespace CarBook.Persistence.Repositories.AuthRepositories
             };
         }
 
-
-
         private string GenerateNewJsonWebToken(List<Claim> claims)
         {
             var authSecret = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
@@ -167,7 +150,8 @@ namespace CarBook.Persistence.Repositories.AuthRepositories
             var tokenObject = new JwtSecurityToken(
                     issuer: _configuration["JWT:ValidIssuer"],
                     audience: _configuration["JWT:ValidAudience"],
-                    expires: DateTime.Now.AddHours(1),
+                    expires: DateTime.UtcNow.AddHours(1),
+                    notBefore: DateTime.UtcNow,
                     claims: claims,
                     signingCredentials: new SigningCredentials(authSecret, SecurityAlgorithms.HmacSha256)
                 );

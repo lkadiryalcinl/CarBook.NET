@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.LocationDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LocationBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminLocation")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminLocationController : Controller
     {
 

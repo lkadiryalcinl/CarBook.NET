@@ -1,9 +1,11 @@
 ﻿using CarBook.Dto.RentACarDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CarBook.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class RentACarListController : Controller
     {
         private readonly HttpClientServiceAction _httpClientServiceAction;

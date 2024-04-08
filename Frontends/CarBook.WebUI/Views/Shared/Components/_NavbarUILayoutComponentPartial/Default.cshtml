@@ -1,4 +1,12 @@
-﻿<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+﻿@using Microsoft.AspNetCore.Http
+
+@{
+    var user = Context.User;
+    var isLoggedIn = user.Identity.IsAuthenticated;
+    var username = user.Identity.Name;
+}
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
         <a class="navbar-brand" href="/Home/Index">Car<span>Book</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,6 +23,27 @@
                 <li class="nav-item"><a href="/About/Index" class="nav-link">Hakkımızda</a></li>
                 <li class="nav-item"><a href="/Contact/Index" class="nav-link">Iletişim</a></li>
             </ul>
+
+            @* Auth Öncesi Kısım *@
+            @if (!isLoggedIn)
+            {
+                <div class="d-flex justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="/Auth/Login" class="nav-link">Giriş Yap</a></li>
+                        <li class="nav-item"><a href="/Auth/Register" class="nav-link">Kayıt Ol</a></li>
+                    </ul>
+                </div>
+            }
+            @* Auth Sonrası Kısım *@
+            @if (isLoggedIn)
+            {
+                <div class="d-flex justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="#" class="nav-link">@username</a></li>
+                        <li class="nav-item"><a href="/Auth/Logout" class="nav-link">Çıkış Yap</a></li>
+                    </ul>
+                </div>
+            }
         </div>
     </div>
 </nav>

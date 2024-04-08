@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.CategoryDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CategoryBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminCategory")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminCategoryController : Controller
     {
 

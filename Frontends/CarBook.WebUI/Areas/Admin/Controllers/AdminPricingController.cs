@@ -1,5 +1,6 @@
 ﻿using CarBook.Dto.PricingDto;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -7,6 +8,7 @@ namespace PricingBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminPricing")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminPricingController : Controller
     {
         private readonly HttpClientServiceAction _httpClientServiceAction;

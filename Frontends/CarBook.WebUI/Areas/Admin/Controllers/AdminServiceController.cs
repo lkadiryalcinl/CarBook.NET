@@ -1,11 +1,13 @@
 ﻿using CarBook.Dto.ServiceDtos;
 using CarBook.WebUI.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ServiceBook.WebUI.Controllers
 {
     [Area("Admin")]
     [Route("Admin/AdminService")]
+    [Authorize(Roles = "ADMIN")]
     public class AdminServiceController : Controller
     {
 
