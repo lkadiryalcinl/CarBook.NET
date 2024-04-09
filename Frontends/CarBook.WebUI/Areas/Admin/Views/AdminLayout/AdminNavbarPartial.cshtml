@@ -2,7 +2,7 @@
     <div class="navbar-header">
 
         <div class="d-flex align-items-left">
-            <button type="button" class="btn btn-sm mr-2 d-lg-none px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+            @* <button type="button" class="btn btn-sm mr-2 d-lg-none px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
 
@@ -34,7 +34,7 @@
                         Siteye Git
                     </a>
                 </div>
-            </div>
+            </div> *@
         </div>
 
         <div class="d-flex align-items-center">
@@ -194,7 +194,7 @@
                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
                         <span>Ekranı Kilitle</span>
                     </a>
-                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)">
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="javascript:void(0)" onclick="logout()">
                         <span>Çıkış Yap</span>
                     </a>
                 </div>
@@ -203,3 +203,26 @@
         </div>
     </div>
 </header>
+
+<script>
+    function logout() {
+        if (confirm('Çıkış yapmak istediğinize emin misiniz?')) {
+            fetch('/Auth/Logout', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({}) // Boş bir JSON nesnesi gönderiyoruz
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = '/Home/Index'; // Başarılı olursa ana sayfaya yönlendir
+                } else {
+                    alert('Çıkış yapılırken bir hata oluştu.');
+                }
+            }).catch(error => {
+                console.error('Hata:', error);
+                alert('Bir hata oluştu, lütfen tekrar deneyin.');
+            });
+        }
+    }
+</script>

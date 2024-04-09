@@ -6,5 +6,6 @@
         public string CoverImageUrl { get; set; }
         public DateTime CreatedDate { get; set; }
         public string AuthorName { get; set; }
+        public int CommentCount { get; set; }
     }
 }

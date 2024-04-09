@@ -26,7 +26,9 @@
                                     <th>Sil</th>
                                     <th>Güncelle</th>
                                     <th>Detaylar</th>
+                                    <th>Özellik Ata</th>
                                     <th>Sitede Gör</th>
+                                    <th>Fiyat Bilgileri</th>
                                     <th>Fiyat Bilgileri</th>
                                 </tr>
                             </thead>
@@ -47,12 +49,20 @@
                                                class="btn btn-outline-success">Güncelle</a>
                                         </td>
                                         <td>
-                                            <a href="/Admin/AdminCar/CarDetail/@item.ID"
+                                            <a href="/Admin/AdminCarFeatureDetail/Index/@item.ID"
                                                class="btn btn-outline-dark">Ek Özellikler</a>
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/AdminCarFeatureDetail/CreateFeatureByCarID"
+                                               class="btn btn-outline-info">Özellik Ata</a>
                                         </td>
                                         <td>
                                             <a href="/Car/@item.ID"
                                                class="btn btn-outline-warning">Sitede Gör</a>
+                                        </td>
+                                        <td>
+                                            <a href="/Admin/AdminCar/CarPrice/@item.ID"
+                                               class="btn btn-outline-secondary">Fiyat Bilgileri</a>
                                         </td>
                                         <td>
                                             <a href="/Admin/AdminCar/CarPrice/@item.ID"

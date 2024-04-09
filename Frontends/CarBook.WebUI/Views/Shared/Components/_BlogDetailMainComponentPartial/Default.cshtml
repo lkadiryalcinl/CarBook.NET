@@ -1,9 +1,14 @@
-﻿@model GetBlogById 
+﻿@using Microsoft.AspNetCore.Http
+@model GetBlogById
 
+@{
+    var user = Context.User;
+    var isLoggedIn = user.Identity.IsAuthenticated;
+}
 <div class="col-md-8 ftco-animate">
     <h2 class="mb-3">@Model.Title</h2>
     <p>@Model.Description</p>
-    
+
     @await Component.InvokeAsync("_BlogDetailCloudTagByBlogComponentPartial", new { id = Model.ID })
 
     @await Component.InvokeAsync("_BlogDetailAuthorInfoComponentPartial", new { id = Model.ID })
@@ -12,10 +17,21 @@
         <h3 class="mb-5">@Model.CommentsCount Yorum</h3>
 
         @await Component.InvokeAsync("_CommentListByBlogComponentPartial", new { id = Model.ID })
-        
+
         @* @await Component.InvokeAsync("_AddCommentComponentPartial") *@
 
-        @await Html.PartialAsync("~/Views/Blog/AddComment.cshtml")
+        @* Auth Öncesi Kısım *@
+        @if (!isLoggedIn)
+        {
+            <div>
+                <h5>Yorum yapabilmek için giriş yapmanız gerekmektedir. <a class="nav-link" href="/Auth/Login">Giriş Yap</a></h5>
+            </div>
+        }
+        @* Auth Sonrası Kısım *@
+        @if (isLoggedIn)
+        {
+            @await Html.PartialAsync("~/Views/Blog/AddComment.cshtml")
+        }
     </div>
 
 </div>

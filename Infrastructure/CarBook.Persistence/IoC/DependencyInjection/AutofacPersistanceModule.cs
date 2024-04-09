@@ -17,6 +17,8 @@ using CarBook.Application.Interfaces.RentACarInterfaces;
 using CarBook.Persistence.Repositories.RentACarRepositories;
 using CarBook.Application.Interfaces.AuthInterfaces;
 using CarBook.Persistence.Repositories.AuthRepositories;
+using CarBook.Persistence.Repositories.CarFeatureRepositories;
+using CarBook.Application.Interfaces.CarFeatureInterfaces;
 
 namespace CarBook.Persistence.IoC.DependencyInjection
 {
@@ -34,6 +36,7 @@ namespace CarBook.Persistence.IoC.DependencyInjection
             builder.RegisterType<StatisticRepository>().As<IStatisticsRepository>().InstancePerLifetimeScope();
             builder.RegisterType<RentACarRepository>().As<IRentACarRepository>().InstancePerLifetimeScope();
             builder.RegisterType<AuthRepository>().As<IAuthRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<CarFeatureRepository>().As<ICarFeatureRepository>().InstancePerLifetimeScope();
 
         }
     }
