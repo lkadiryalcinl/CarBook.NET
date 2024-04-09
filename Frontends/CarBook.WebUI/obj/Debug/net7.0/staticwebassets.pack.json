@@ -1905,6 +1905,10 @@
       "PackagePath": "staticwebassets\\carbook-master\\scss\\style.scss"
     },
     {
+      "Id": "C:\\Users\\ASUS\\source\\repos\\CarBook.NET\\Frontends\\CarBook.WebUI\\wwwroot\\chart.js",
+      "PackagePath": "staticwebassets\\chart.js"
+    },
+    {
       "Id": "C:\\Users\\ASUS\\source\\repos\\CarBook.NET\\Frontends\\CarBook.WebUI\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

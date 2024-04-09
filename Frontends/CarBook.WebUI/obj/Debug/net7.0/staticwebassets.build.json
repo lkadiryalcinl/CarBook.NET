@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GXIAxKm/1Ii90stm0yxaehfpPGe6684s+VjZkkwlUvc=",
+  "Hash": "3gK8+U3c86DUF/jE59qrv5+jwt8Ia16ClmPoZ9CWpUQ=",
   "Source": "CarBook.WebUI",
   "BasePath": "_content/CarBook.WebUI",
   "Mode": "Default",
@@ -9078,6 +9078,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\carbook-master\\scss\\style.scss"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\source\\repos\\CarBook.NET\\Frontends\\CarBook.WebUI\\wwwroot\\chart.js",
+      "SourceId": "CarBook.WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\source\\repos\\CarBook.NET\\Frontends\\CarBook.WebUI\\wwwroot\\",
+      "BasePath": "_content/CarBook.WebUI",
+      "RelativePath": "chart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\chart.js"
     },
     {
       "Identity": "C:\\Users\\ASUS\\source\\repos\\CarBook.NET\\Frontends\\CarBook.WebUI\\wwwroot\\css\\site.css",
