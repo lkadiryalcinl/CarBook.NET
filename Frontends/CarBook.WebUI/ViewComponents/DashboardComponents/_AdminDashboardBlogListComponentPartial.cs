@@ -1,27 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using CarBook.Dto.BlogDtos;
+using CarBook.WebUI.Services;
 
 namespace CarBook.WebUI.ViewComponents.DashboardComponents
 {
     public class _AdminDashboardBlogListComponentPartial : ViewComponent
     {
-        private readonly IHttpClientFactory _httpClientFactory;
-        public _AdminDashboardBlogListComponentPartial(IHttpClientFactory httpClientFactory)
+        private readonly HttpClientServiceViewComponent _viewComponent;
+
+        public _AdminDashboardBlogListComponentPartial(HttpClientServiceViewComponent viewComponent)
         {
-            _httpClientFactory = httpClientFactory;
+            _viewComponent = viewComponent;
         }
+
         public async Task<IViewComponentResult> InvokeAsync()
         {
-            var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44311/api/Blogs/GetAllBlogsWithAuthor");
-            if (responseMessage.IsSuccessStatusCode)
-            {
-                var jsonData = await responseMessage.Content.ReadAsStringAsync();
-                var values = JsonConvert.DeserializeObject<List<ResultAllBlogsWithAuthorDto>>(jsonData);
-                return View(values);
-            }
-            return View();
+            return await _viewComponent.InvokeAsync<List<ResultAllBlogsWithAuthorDto>>("Blogs/GetAllBlogsWithAuthor");
         }
     }
 }
