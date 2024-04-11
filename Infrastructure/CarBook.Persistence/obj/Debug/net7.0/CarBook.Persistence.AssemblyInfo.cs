@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CarBook.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4d27f7b99e6fdf828544b9c79fd3c3293207e84d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9db8abc4a65d4075b12762bb1a3959509c38937c")]
 [assembly: System.Reflection.AssemblyProductAttribute("CarBook.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CarBook.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

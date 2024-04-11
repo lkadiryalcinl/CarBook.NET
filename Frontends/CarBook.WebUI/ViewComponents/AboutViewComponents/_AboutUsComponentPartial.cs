@@ -1,8 +1,6 @@
 ﻿using CarBook.Dto.AboutDtos;
-using CarBook.Dto.StatisticsDtos;
 using CarBook.WebUI.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace CarBook.WebUI.ViewComponents.AboutViewComponents
 {
