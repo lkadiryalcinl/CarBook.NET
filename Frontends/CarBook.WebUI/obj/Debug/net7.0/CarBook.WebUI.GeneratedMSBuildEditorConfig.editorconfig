@@ -238,6 +238,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyUHJpY2luZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ASUS/source/repos/CarBook.NET/Frontends/CarBook.WebUI/Views/Car/CarDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXENhckRldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ASUS/source/repos/CarBook.NET/Frontends/CarBook.WebUI/Views/Car/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -328,6 +332,22 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/ASUS/source/repos/CarBook.NET/Frontends/CarBook.WebUI/Views/Shared/Components/_BlogDetailTagCloudComponentPartial/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0Jsb2dEZXRhaWxUYWdDbG91ZENvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/source/repos/CarBook.NET/Frontends/CarBook.WebUI/Views/Shared/Components/_CarDetailCarDescriptionByCarIdComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0NhckRldGFpbENhckRlc2NyaXB0aW9uQnlDYXJJZENvbXBvbmVudFBhcnRpYWxcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/source/repos/CarBook.NET/Frontends/CarBook.WebUI/Views/Shared/Components/_CarDetailCarFeatureByCarIdComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0NhckRldGFpbENhckZlYXR1cmVCeUNhcklkQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/source/repos/CarBook.NET/Frontends/CarBook.WebUI/Views/Shared/Components/_CarDetailMainCarFeatureComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0NhckRldGFpbE1haW5DYXJGZWF0dXJlQ29tcG9uZW50UGFydGlhbFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ASUS/source/repos/CarBook.NET/Frontends/CarBook.WebUI/Views/Shared/Components/_CarDetailTabPaneComponentPartial/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcX0NhckRldGFpbFRhYlBhbmVDb21wb25lbnRQYXJ0aWFsXERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ASUS/source/repos/CarBook.NET/Frontends/CarBook.WebUI/Views/Shared/Components/_CommentListByBlogComponentPartial/Default.cshtml]

@@ -14,13 +14,10 @@ namespace CarBook.WebUI.Areas.Admin.Controllers
     public class AdminCarFeatureDetailController : Controller
     {
         private readonly HttpClientServiceAction _httpClientServiceAction;
-        private readonly IHttpClientFactory _httpClientFactory;
 
-        public AdminCarFeatureDetailController(HttpClientServiceAction httpClientServiceAction, 
-            IHttpClientFactory httpClientFactory)
+        public AdminCarFeatureDetailController(HttpClientServiceAction httpClientServiceAction)
         {
             _httpClientServiceAction = httpClientServiceAction;
-            _httpClientFactory = httpClientFactory;
         }
 
         [HttpGet]
