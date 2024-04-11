@@ -44,9 +44,7 @@ namespace CarBook.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
-            var client = _httpClientFactory.CreateClient();
-            var content = new StringContent(JsonSerializer.Serialize(loginDto), Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("https://localhost:44311/api/Auths/login", content);
+            var response = await _httpClientServiceAction.CreateAsyncVal<LoginDto>("Auths/login", loginDto);
             if (response.IsSuccessStatusCode)
             {
                 var jsonData = await response.Content.ReadAsStringAsync();

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Text;
 
 namespace CarBook.WebUI.Services
@@ -12,7 +13,7 @@ namespace CarBook.WebUI.Services
         {
             _httpClientFactory = httpClientFactory;
             _httpClient = _httpClientFactory.CreateClient();
-            _httpClient.BaseAddress = new Uri("https://localhost:44311/api/");
+            _httpClient.BaseAddress = new Uri("https://carbookwebap.azurewebsites.net/api/");
         }
 
         public async Task<TDto> InvokeAsync<TDto>(string path)
@@ -36,6 +37,15 @@ namespace CarBook.WebUI.Services
             var responseMessage = await _httpClient.PostAsync(path, content);
 
             return responseMessage.IsSuccessStatusCode;
+        }
+
+        public async Task<HttpResponseMessage> CreateAsyncVal<TDto>(string path, TDto CreateDto)
+        {
+            var jsonData = JsonConvert.SerializeObject(CreateDto);
+            StringContent content = new(jsonData, Encoding.UTF8, "application/json");
+            var responseMessage = await _httpClient.PostAsync(path, content);
+
+            return responseMessage;
         }
 
         public async Task<bool> RemoveAsync(string path)

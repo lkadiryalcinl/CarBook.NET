@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using System.Text;
 
 namespace CarBook.WebUI.Services
 {
@@ -13,7 +12,7 @@ namespace CarBook.WebUI.Services
         {
             _httpClientFactory = httpClientFactory;
             _httpClient = _httpClientFactory.CreateClient();
-            _httpClient.BaseAddress = new Uri("https://localhost:44311/api/");
+            _httpClient.BaseAddress = new Uri("https://carbookwebap.azurewebsites.net/api/");
         }
 
         public async Task<IViewComponentResult> InvokeAsync<TDto>(string path)
